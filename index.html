@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.5.0/riot+compiler.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<title>ジャンプゲーム</title>
+		<style>
+			body{
+				background-image: url("./img/back.jpg");
+				background-position:bottom 0px;
+				background-attachment: fixed;
+				background-size: 72%;
+				height: 100%;
+			}
+			#gameovergif{
+				position: absolute;
+				right: 0;
+				left: 0;
+				margin: auto;
+			}
+			#replaypic{
+				position: absolute;
+				right: 0;
+				left: 0;
+				margin: auto;
+				cursor: pointer;
+			}
+			#replaypic:hover {
+				opacity:0.7;
+				-webkit-transform: scale(0.98,0.98);  
+				-moz-transform: scale(0.98,0.98);  
+				-o-transform: scale(0.98,0.98);  
+				transform: scale(0.98,0.98); /* 要素を拡大縮小する　この場合はX方向（横）、Y方向（縦）に98%に縮小 */
+			}
+		</style>
+	</head>
+	<body>
+		<!--サウンドコンポーネント-->
+		<sound></sound>
+		<!-- タグの定義 -->
+		<script type="riot/tag">
+			<sound>
+				<audio id="backsound" preload="auto">
+					<source src="./sound/backbgm1.mp3" type="audio/mp3">
+				</audio>
+				<audio id="gomasound" preload="auto">
+					<source src="./sound/gomadare.mp3" type="audio/mp3">
+				</audio>
+				<audio id="jumpsound" preload="auto">
+					<source src="./sound/jump.mp3" type="audio/mp3">
+				</audio>
+				<audio id="squatsound" preload="auto">
+					<source src="./sound/syunkan.mp3" type="audio/mp3">
+				</audio>
+				<audio id="deathsound" preload="auto">
+					<source src="./sound/accident.mp3" type="audio/mp3">
+				</audio>
+				<audio id="gameoversound" preload="auto">
+					<source src="./sound/gameover.mp3" type="audio/mp3">
+				</audio>
+			</sound>
+		</script>
+		<script>riot.mount("*");</script>
+		<div id = "score">
+			<p>GREAT：<span id="great">0</span>回</p>
+			<p>GOOD：<span id="good">0</span>回</p>
+		</div>
+		<script type="text/javascript" src="./build/js/bundle.js"></script>
+	</body>
+</html>
