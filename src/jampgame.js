@@ -185,6 +185,5 @@ window.onload = function(){
 			document.onkeydown = f.escapefunc;
 		};
 	}
-let m = main();
-m();//main実行
+    main();
 };
